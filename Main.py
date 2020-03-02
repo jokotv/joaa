@@ -1,6 +1,7 @@
 import discord
 import asyncio
 import openpyxl
+import os
 
 client = discord.Client()
 
@@ -35,4 +36,5 @@ async def on_message(message):
                 break
         file.save("학습데이터베이스.xlsx")
 
-client.run("NjgzNjQwNDg4ODY3MTM1NjQx.Xlugfg.0z8Q9vkLRQGcDCSYbG-7LVX0tbE")
+access_token = os.environ["BOT_TOKEN"]
+client.run(access_token)
