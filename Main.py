@@ -17,7 +17,7 @@ async def on_message(message):
     if message.content.startswith("조아"):
         file = openpyxl.load_workbook("학습데이터베이스.xlsx")
         sheet = file.active
-        memory = message.content.split("-")
+        memory = message.content.split("")
         for i in range(1,3000):
             if sheet["A" + str(i)].value == memory[1]:
                 await message.channel.send(sheet["B" + str(i)].value)
